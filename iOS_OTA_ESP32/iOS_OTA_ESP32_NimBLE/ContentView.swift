@@ -12,7 +12,7 @@ struct ContentView: View {
     @EnvironmentObject var ble : BLEConnection
     var body: some View{
         VStack{
-            Text("iOS OTA for ESP32 using NimBLE").bold()
+            Text("Meshtastic OTA for ESP32").bold()
             VStack {
                 Text("Device : \(ble.name)")
                 Text("Transfer speed : \(ble.kBPerSecond, specifier: "%.1f") kB/s")
@@ -38,9 +38,9 @@ struct ContentView: View {
             }
             HStack{
                 Button(action: {
-                    ble.sendFile(filename: "testfile", fileEnding: ".bin")
+                    ble.sendFile(filename: "firmware-tbeam-2.0.6-update", fileEnding: ".bin")
                 }){
-                    Text("send .bin file to ESP32 over OTA").padding().overlay(RoundedRectangle(cornerRadius: 15).stroke(colorChange(ble.connected), lineWidth: 2))
+                    Text("send tbeam .bin file to ESP32 over OTA").padding().overlay(RoundedRectangle(cornerRadius: 15).stroke(colorChange(ble.connected), lineWidth: 2))
                 }.disabled(ble.transferOngoing)
                 
                 
