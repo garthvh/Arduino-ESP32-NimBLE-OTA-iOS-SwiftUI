@@ -1,7 +1,5 @@
-# Arduino-ESP32-NimBLE-OTA-iOS-SwiftUI
-ESP32 OTA with SwiftUI over BLE using NimBLE
-
-Arduino example (ESP32 core 1.06) for BLE OTA on a ESP32 using an iOS app
+# Meshtastic-ESP32-NimBLE-OTA
+Meshtastic ESP32 OTA with SwiftUI over BLE using NimBLE
 
 This is an demo on how to upload firmware (.bin file) from an iOS app to an ESP32.
 
