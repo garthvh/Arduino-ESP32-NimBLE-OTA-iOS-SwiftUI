@@ -7,8 +7,9 @@
 
 import CoreBluetooth
 
-private let peripheralIdDefaultsKey = "MyBluetoothManagerPeripheralId"
-private let myDesiredServiceId = CBUUID(string: "4FAFC201-1FB5-459E-8FCC-C5C9C331914B")  //Used for auto connect and re connect to this Service UIID only
+private let peripheralIdDefaultsKey = "Meshtastic_Device"
+
+let meshtasticServiceId = CBUUID(string: "0x6BA1B218-15A8-461F-9FA8-5DCAE273EAFD") //Used for auto connect and re connect to this Service UIID only
 private let myDesiredCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130003")
 private let statusCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130003")  //ESP32 pTxCharacteristic ESP send (notifying)
 private let otaCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130005")//ESP32 pOtaCharacteristic  ESP write
@@ -211,6 +212,8 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     }
     // Discover BLE device Service charachteristics
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        
+        
         print("\(Date()) PH didDiscoverCharacteristicsFor")
         
         if let error = error {
@@ -221,6 +224,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
         
         guard peripheral.myDesiredCharacteristic != nil else {
             print("\(Date()) Desired characteristic missing")
+            print(service.characteristics)
             disconnect()
             return
         }
@@ -307,7 +311,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
             print("\(Date()) Cannot scan, BT is not powered on")
             return
         }
-        manager.scanForPeripherals(withServices: [myDesiredServiceId], options: nil)
+        manager.scanForPeripherals(withServices: [meshtasticServiceId], options: nil)
         state = .scanning(Countdown(seconds: 10, closure: {
             self.manager.stopScan()
             self.state = .disconnected
@@ -354,7 +358,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     func discoverServices(peripheral: CBPeripheral) {
         print("\(Date()) FUNC DiscoverServices")
         peripheral.delegate = self
-        peripheral.discoverServices([myDesiredServiceId])
+        peripheral.discoverServices([meshtasticServiceId])
         state = .discoveringServices(peripheral, Countdown(seconds: 10, closure: {
             self.disconnect()
             print("\(Date()) Could not discover services")
@@ -479,7 +483,7 @@ extension CBPeripheral {
     // Helper to find the service we're interested in.
     var myDesiredService: CBService? {
         guard let services = services else { return nil }
-        return services.first { $0.uuid == myDesiredServiceId }
+        return services.first { $0.uuid == meshtasticServiceId }
     }
     // Helper to find the characteristic we're interested in.
     var myDesiredCharacteristic: CBCharacteristic? {
