@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C564792525BE75DC00126AA8 /* iOS_OTA_ESP32_NimBLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_OTA_ESP32_NimBLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C564792525BE75DC00126AA8 /* MeshtasticFlasherESP32.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeshtasticFlasherESP32.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C564792825BE75DC00126AA8 /* iOS_OTA_ESP32App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_OTA_ESP32App.swift; sourceTree = "<group>"; };
 		C564792A25BE75DC00126AA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C564792C25BE75DD00126AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		C564792625BE75DC00126AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C564792525BE75DC00126AA8 /* iOS_OTA_ESP32_NimBLE.app */,
+				C564792525BE75DC00126AA8 /* MeshtasticFlasherESP32.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,9 +89,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C564792425BE75DC00126AA8 /* iOS_OTA_ESP32_NimBLE */ = {
+		C564792425BE75DC00126AA8 /* MeshtasticFlasherESP32 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C564793425BE75DD00126AA8 /* Build configuration list for PBXNativeTarget "iOS_OTA_ESP32_NimBLE" */;
+			buildConfigurationList = C564793425BE75DD00126AA8 /* Build configuration list for PBXNativeTarget "MeshtasticFlasherESP32" */;
 			buildPhases = (
 				C564792125BE75DC00126AA8 /* Sources */,
 				C564792225BE75DC00126AA8 /* Frameworks */,
@@ -101,9 +101,9 @@
 			);
 			dependencies = (
 			);
-			name = iOS_OTA_ESP32_NimBLE;
+			name = MeshtasticFlasherESP32;
 			productName = iOS_OTA_ESP32;
-			productReference = C564792525BE75DC00126AA8 /* iOS_OTA_ESP32_NimBLE.app */;
+			productReference = C564792525BE75DC00126AA8 /* MeshtasticFlasherESP32.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -120,7 +120,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C564792025BE75DC00126AA8 /* Build configuration list for PBXProject "iOS_OTA_ESP32_NimBLE" */;
+			buildConfigurationList = C564792025BE75DC00126AA8 /* Build configuration list for PBXProject "MeshtasticFlasherESP32" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -133,7 +133,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C564792425BE75DC00126AA8 /* iOS_OTA_ESP32_NimBLE */,
+				C564792425BE75DC00126AA8 /* MeshtasticFlasherESP32 */,
 			);
 		};
 /* End PBXProject section */
@@ -292,7 +292,7 @@
 				DEVELOPMENT_TEAM = GCH7VS5Y9R;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS_OTA_ESP32_NimBLE/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +314,7 @@
 				DEVELOPMENT_TEAM = GCH7VS5Y9R;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS_OTA_ESP32_NimBLE/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,7 +329,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C564792025BE75DC00126AA8 /* Build configuration list for PBXProject "iOS_OTA_ESP32_NimBLE" */ = {
+		C564792025BE75DC00126AA8 /* Build configuration list for PBXProject "MeshtasticFlasherESP32" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C564793225BE75DD00126AA8 /* Debug */,
@@ -338,7 +338,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C564793425BE75DD00126AA8 /* Build configuration list for PBXNativeTarget "iOS_OTA_ESP32_NimBLE" */ = {
+		C564793425BE75DD00126AA8 /* Build configuration list for PBXNativeTarget "MeshtasticFlasherESP32" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C564793525BE75DD00126AA8 /* Debug */,

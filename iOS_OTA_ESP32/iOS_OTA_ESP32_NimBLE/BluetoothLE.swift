@@ -1,22 +1,18 @@
 //
 //  BluetoothLE.swift
 //
-//  Inspired by: purpln https://github.com/purpln/bluetooth and Chris Hulbert http://www.splinter.com.au/2019/05/18/ios-swift-bluetooth-le/
-//  Created by Claes Hallberg on 1/12/22.
-//  Licence: MIT
+//
+//
 
 import CoreBluetooth
 
-private let peripheralIdDefaultsKey = "Meshtastic_Device"
-
-let meshtasticServiceId = CBUUID(string: "0x6BA1B218-15A8-461F-9FA8-5DCAE273EAFD") //Used for auto connect and re connect to this Service UIID only
+private let myDesiredServiceId = CBUUID(string: "4FAFC201-1FB5-459E-8FCC-C5C9C331914B")  //Used for auto connect and re connect to this Service UIID only
 private let myDesiredCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130003")
 private let statusCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130003")  //ESP32 pTxCharacteristic ESP send (notifying)
 private let otaCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130005")//ESP32 pOtaCharacteristic  ESP write
 
 private let outOfRangeHeuristics: Set<CBError.Code> = [.unknown, .connectionTimeout, .peripheralDisconnected, .connectionFailed]
 
-// Class definition
 class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     
     var manager: CBCentralManager!
@@ -57,7 +53,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     @Published var name = ""
     @Published var connected = false
     @Published var transferProgress : Double = 0.0
-    @Published var chunkCount = 2 // number of chunks to be sent before peripheral needs to accknowledge.
+    @Published var chunkCount = 4 // number of chunks to be sent before peripheral needs to accknowledge.
     @Published var elapsedTime = 0.0
     @Published var kBPerSecond = 0.0
     
@@ -98,20 +94,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
         case .poweredOn:
             print("\(Date()) Everything is ok :-) ")
             if case .poweredOff = state {
-                // Firstly, try to reconnect:
-                // 1. Any peripheralsID stored in UserDefaults?
-                if let peripheralIdStr = UserDefaults.standard.object(forKey: peripheralIdDefaultsKey) as? String,
-                   // 2. Yes, so convert the String to a UUID type
-                   let peripheralId = UUID(uuidString: peripheralIdStr),
-                   // 3. Compare with UUID's already in the manager
-                   let previouslyConnected = manager
-                    .retrievePeripherals(withIdentifiers: [peripheralId])
-                    .first {
-                    // 4. If ok then connect
-                    print("\(Date()) CM DidUpdateState: connect from userDefaults")
-                    connect(peripheral: previouslyConnected)
-                    // Next, try for ones that are connected to the system:
-                }
+
             }
             print("\(Date()) End of .poweredOn")
         @unknown default:
@@ -212,8 +195,6 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     }
     // Discover BLE device Service charachteristics
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        
-        
         print("\(Date()) PH didDiscoverCharacteristicsFor")
         
         if let error = error {
@@ -224,7 +205,6 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
         
         guard peripheral.myDesiredCharacteristic != nil else {
             print("\(Date()) Desired characteristic missing")
-            print(service.characteristics)
             disconnect()
             return
         }
@@ -304,14 +284,14 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     /*-------------------------------------------------------------------------
      Functions
      -------------------------------------------------------------------------*/
-    // Scanning for device with a specific Service UUID (myDesiredServiceId)
+    // Scan for a device with the OTA Service UUID (myDesiredServiceId)
     func startScanning(){
         print("\(Date()) FUNC StartScanning")
         guard manager.state == .poweredOn else {
             print("\(Date()) Cannot scan, BT is not powered on")
             return
         }
-        manager.scanForPeripherals(withServices: [meshtasticServiceId], options: nil)
+        manager.scanForPeripherals(withServices: [myDesiredServiceId], options: nil)
         state = .scanning(Countdown(seconds: 10, closure: {
             self.manager.stopScan()
             self.state = .disconnected
@@ -319,15 +299,10 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
         }))
     }
     
-    // Disconnect by user request
-    func disconnect(forget: Bool = false) {
+    func disconnect() {
         print("\(Date()) FUNC Disconnect")
         if let peripheral = state.peripheral {
             manager.cancelPeripheralConnection(peripheral)
-        }
-        if forget {
-            UserDefaults.standard.removeObject(forKey: peripheralIdDefaultsKey)
-            UserDefaults.standard.synchronize()
         }
         state = .disconnected
         connected = false
@@ -358,7 +333,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     func discoverServices(peripheral: CBPeripheral) {
         print("\(Date()) FUNC DiscoverServices")
         peripheral.delegate = self
-        peripheral.discoverServices([meshtasticServiceId])
+        peripheral.discoverServices([myDesiredServiceId])
         state = .discoveringServices(peripheral, Countdown(seconds: 10, closure: {
             self.disconnect()
             print("\(Date()) Could not discover services")
@@ -391,10 +366,6 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
             disconnect()
             return
         }
-        
-        // Remember the ID for startup reconnecting.
-        UserDefaults.standard.set(peripheral.identifier.uuidString, forKey: peripheralIdDefaultsKey)
-        UserDefaults.standard.synchronize()
         
         peripheral.setNotifyValue(true, for: myDesiredCharacteristic)
         state = .connected(peripheral)
@@ -483,7 +454,7 @@ extension CBPeripheral {
     // Helper to find the service we're interested in.
     var myDesiredService: CBService? {
         guard let services = services else { return nil }
-        return services.first { $0.uuid == meshtasticServiceId }
+        return services.first { $0.uuid == myDesiredServiceId }
     }
     // Helper to find the characteristic we're interested in.
     var myDesiredCharacteristic: CBCharacteristic? {

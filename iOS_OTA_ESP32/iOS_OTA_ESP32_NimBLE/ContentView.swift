@@ -1,7 +1,7 @@
 //
 //  ContentView.swift
 //  iOS_OTA_ESP32
-//  Inspired by: purpln https://github.com/purpln/bluetooth
+
 //  Licence: MIT
 //  Created by Claes Hallberg on 1/13/22.
 //
@@ -11,50 +11,82 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var ble : BLEConnection
     var body: some View{
-        VStack{
-            Text("Meshtastic OTA for ESP32").bold()
-            VStack {
-                Text("Device : \(ble.name)")
-                Text("Transfer speed : \(ble.kBPerSecond, specifier: "%.1f") kB/s")
-                Text("Elapsed time   : \(ble.elapsedTime, specifier: "%.1f") s")
-                Text("Upload progress: \(ble.transferProgress, specifier: "%.1f") %")
-            }
+        VStack (alignment: .center) {
+            Text("Meshtastic Flasher Wireless Firmware Update Tool for ESP32 Devices")
+                .font(.title)
+                .tint(.accentColor)
+                .multilineTextAlignment(.center)
+                .padding(.top, 50)
+                .padding()
             HStack{
-                Button(action: {
-                    ble.startScanning()
-                }){
-                    Text("connect").padding().overlay(RoundedRectangle(cornerRadius: 15).stroke(colorChange(ble.connected), lineWidth: 2))
-                }
-                Button(action: {
-                    ble.disconnect(forget: false)
-                }){
-                    Text("disconnect").padding().overlay(RoundedRectangle(cornerRadius: 15).stroke(colorChange(ble.connected), lineWidth: 2))
-                }
-                Button(action: {
-                    ble.disconnect(forget: true)
-                }){
-                    Text("forget bond").padding().overlay(RoundedRectangle(cornerRadius: 15).stroke(colorChange(ble.connected), lineWidth: 2))
+                if !ble.connected {
+                    Button(action: {
+                            ble.startScanning()
+                        }){
+                            Label("Connect", systemImage: "antenna.radiowaves.left.and.right")
+                                .padding()
+                                .overlay(RoundedRectangle(cornerRadius: 15)
+                                .stroke(.blue, lineWidth: 2))
+                                .accentColor(.blue)
+                    }
+                } else {
+                    VStack {
+                        Text("Connected Meshtastic Device:")
+                            .font(.title2)
+                            .multilineTextAlignment(.center)
+                            .tint(.green)
+                            .padding(.top)
+                        Text(ble.name)
+                            .font(.title)
+                            .multilineTextAlignment(.center)
+                            .tint(.green)
+                            .padding(.bottom)
+                        
+                        if !ble.transferOngoing {
+                            
+                            Button(action: {
+                                ble.disconnect()
+                            }){
+                                Label("Disconnect", systemImage: "antenna.radiowaves.left.and.right.slash")
+                                    .padding()
+                                    .overlay(RoundedRectangle(cornerRadius: 15)
+                                        .stroke(.red, lineWidth: 2))
+                                    .accentColor(.red)
+                            }
+                        }
+                    }
                 }
             }
+           
+            if ble.connected && ble.transferProgress > 0.0 {
+                VStack {
+                
+                    Text("Transfer speed : \(ble.kBPerSecond, specifier: "%.1f") kB/s")
+                    Text("Elapsed time   : \(ble.elapsedTime, specifier: "%.1f") s")
+                        .padding(.bottom)
+                    ProgressView("Uploading Firmware", value: (ble.transferProgress / 100))
+                        .accentColor(.green)
+                        .padding()
+                }
+            }
+            
             HStack{
-                Button(action: {
-                    ble.sendFile(filename: "firmware-tbeam-2.0.6-update", fileEnding: ".bin")
-                }){
-                    Text("send tbeam .bin file to ESP32 over OTA").padding().overlay(RoundedRectangle(cornerRadius: 15).stroke(colorChange(ble.connected), lineWidth: 2))
-                }.disabled(ble.transferOngoing)
-                
-                
-                
+                if ble.connected && !ble.transferOngoing {
+                    Button(action: {
+                        ble.sendFile(filename: "firmware-tbeam-2.0.6-update", fileEnding: ".bin")
+                    }){
+                        Text("Update Firmware")
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 15)
+                                .stroke(.blue, lineWidth: 2))
+                            .tint(.blue)
+                    }
+                    .padding()
+                }
             }
-            Divider()
-            VStack{
-                Stepper("chunks (1-4) per write cycle: \(ble.chunkCount)", value: $ble.chunkCount, in: 1...4)
-                    .disabled(ble.transferOngoing)
-            }
-            HStack{
-                Spacer()
-            }
-        }.padding().accentColor(colorChange(ble.connected))
+        }
+        .padding()
+        Spacer()
     }
 }
 
