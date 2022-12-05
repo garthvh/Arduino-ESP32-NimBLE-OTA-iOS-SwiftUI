@@ -55,7 +55,7 @@ struct ContentView: View {
                 }
             }
            
-            if ble.connected && ble.transferProgress > 0.0 {
+            if ble.connected && ble.transferOngoing {
                 VStack {
                 
                     Text("Transfer speed : \(ble.kBPerSecond, specifier: "%.1f") kB/s")
@@ -84,13 +84,5 @@ struct ContentView: View {
         }
         .padding()
         Spacer()
-    }
-}
-
-func colorChange(_ connected:Bool) -> Color{
-    if connected{
-        return Color.green
-    }else{
-        return Color.blue
     }
 }
