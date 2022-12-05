@@ -1,9 +1,6 @@
 //
 //  ContentView.swift
-//  iOS_OTA_ESP32
-
-//  Licence: MIT
-//  Created by Claes Hallberg on 1/13/22.
+//  Created by Garth Vander Houwen on 12/4/22
 //
 
 import SwiftUI

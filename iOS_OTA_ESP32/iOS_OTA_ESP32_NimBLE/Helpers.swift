@@ -1,5 +1,5 @@
 //
-//  MyHelper.swift
+//  Helpers.swift
 //
 //  Created by Claes Hallberg on 7/6/20.
 //  Copyright © 2020 Claes Hallberg. All rights reserved.
