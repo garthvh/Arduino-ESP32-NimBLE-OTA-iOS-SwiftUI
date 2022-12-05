@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C564792925BE75DC00126AA8 /* MeshtasticFlasherESP32.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564792825BE75DC00126AA8 /* MeshtasticFlasherESP32.swift */; };
+		C564792925BE75DC00126AA8 /* MeshtasticFlasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564792825BE75DC00126AA8 /* MeshtasticFlasher.swift */; };
 		C564792B25BE75DC00126AA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564792A25BE75DC00126AA8 /* ContentView.swift */; };
 		C564792D25BE75DD00126AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C564792C25BE75DD00126AA8 /* Assets.xcassets */; };
 		C564793925BE763500126AA8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793825BE763500126AA8 /* Helpers.swift */; };
@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		C564792525BE75DC00126AA8 /* MeshtasticFlasherESP32.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeshtasticFlasherESP32.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C564792825BE75DC00126AA8 /* MeshtasticFlasherESP32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshtasticFlasherESP32.swift; sourceTree = "<group>"; };
+		C564792825BE75DC00126AA8 /* MeshtasticFlasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshtasticFlasher.swift; sourceTree = "<group>"; };
 		C564792A25BE75DC00126AA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C564792C25BE75DD00126AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C564793125BE75DD00126AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		C564792725BE75DC00126AA8 /* MeshtasticFlasher */ = {
 			isa = PBXGroup;
 			children = (
-				C564792825BE75DC00126AA8 /* MeshtasticFlasherESP32.swift */,
+				C564792825BE75DC00126AA8 /* MeshtasticFlasher.swift */,
 				C564792A25BE75DC00126AA8 /* ContentView.swift */,
 				C564793825BE763500126AA8 /* Helpers.swift */,
 				C564792C25BE75DD00126AA8 /* Assets.xcassets */,
@@ -145,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C564792B25BE75DC00126AA8 /* ContentView.swift in Sources */,
-				C564792925BE75DC00126AA8 /* MeshtasticFlasherESP32.swift in Sources */,
+				C564792925BE75DC00126AA8 /* MeshtasticFlasher.swift in Sources */,
 				C564793925BE763500126AA8 /* Helpers.swift in Sources */,
 				C564794025BE776C00126AA8 /* BluetoothLE.swift in Sources */,
 			);
