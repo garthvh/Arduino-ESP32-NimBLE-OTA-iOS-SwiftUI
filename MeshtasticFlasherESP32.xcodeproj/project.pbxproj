@@ -11,7 +11,7 @@
 		C564792B25BE75DC00126AA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564792A25BE75DC00126AA8 /* ContentView.swift */; };
 		C564792D25BE75DD00126AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C564792C25BE75DD00126AA8 /* Assets.xcassets */; };
 		C564793925BE763500126AA8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793825BE763500126AA8 /* Helpers.swift */; };
-		C564794025BE776C00126AA8 /* BluetoothLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793F25BE776C00126AA8 /* BluetoothLE.swift */; };
+		C564794025BE776C00126AA8 /* BLEConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793F25BE776C00126AA8 /* BLEConnection.swift */; };
 		DD457186293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DD457185293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +22,7 @@
 		C564792C25BE75DD00126AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C564793125BE75DD00126AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C564793825BE763500126AA8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		C564793F25BE776C00126AA8 /* BluetoothLE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothLE.swift; sourceTree = "<group>"; };
+		C564793F25BE776C00126AA8 /* BLEConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEConnection.swift; sourceTree = "<group>"; };
 		DD457185293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam-2.0.6-update.bin"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,7 +61,7 @@
 				C564793825BE763500126AA8 /* Helpers.swift */,
 				C564792C25BE75DD00126AA8 /* Assets.xcassets */,
 				C564793125BE75DD00126AA8 /* Info.plist */,
-				C564793F25BE776C00126AA8 /* BluetoothLE.swift */,
+				C564793F25BE776C00126AA8 /* BLEConnection.swift */,
 				C564793B25BE775A00126AA8 /* firmware */,
 			);
 			path = MeshtasticFlasher;
@@ -147,7 +147,7 @@
 				C564792B25BE75DC00126AA8 /* ContentView.swift in Sources */,
 				C564792925BE75DC00126AA8 /* MeshtasticFlasher.swift in Sources */,
 				C564793925BE763500126AA8 /* Helpers.swift in Sources */,
-				C564794025BE776C00126AA8 /* BluetoothLE.swift in Sources */,
+				C564794025BE776C00126AA8 /* BLEConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
