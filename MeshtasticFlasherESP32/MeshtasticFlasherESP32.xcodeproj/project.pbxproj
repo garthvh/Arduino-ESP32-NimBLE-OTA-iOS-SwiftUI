@@ -10,7 +10,6 @@
 		C564792925BE75DC00126AA8 /* MeshtasticFlasherESP32.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564792825BE75DC00126AA8 /* MeshtasticFlasherESP32.swift */; };
 		C564792B25BE75DC00126AA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564792A25BE75DC00126AA8 /* ContentView.swift */; };
 		C564792D25BE75DD00126AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C564792C25BE75DD00126AA8 /* Assets.xcassets */; };
-		C564793025BE75DD00126AA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C564792F25BE75DD00126AA8 /* Preview Assets.xcassets */; };
 		C564793925BE763500126AA8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793825BE763500126AA8 /* Helpers.swift */; };
 		C564794025BE776C00126AA8 /* BluetoothLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793F25BE776C00126AA8 /* BluetoothLE.swift */; };
 		DD457186293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DD457185293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin */; };
@@ -21,7 +20,6 @@
 		C564792825BE75DC00126AA8 /* MeshtasticFlasherESP32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshtasticFlasherESP32.swift; sourceTree = "<group>"; };
 		C564792A25BE75DC00126AA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C564792C25BE75DD00126AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C564792F25BE75DD00126AA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C564793125BE75DD00126AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C564793825BE763500126AA8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		C564793F25BE776C00126AA8 /* BluetoothLE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothLE.swift; sourceTree = "<group>"; };
@@ -42,7 +40,7 @@
 		C564791C25BE75DC00126AA8 = {
 			isa = PBXGroup;
 			children = (
-				C564792725BE75DC00126AA8 /* iOS_OTA_ESP32_NimBLE */,
+				C564792725BE75DC00126AA8 /* MeshtasticFlasher */,
 				C564792625BE75DC00126AA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,7 +53,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C564792725BE75DC00126AA8 /* iOS_OTA_ESP32_NimBLE */ = {
+		C564792725BE75DC00126AA8 /* MeshtasticFlasher */ = {
 			isa = PBXGroup;
 			children = (
 				C564792825BE75DC00126AA8 /* MeshtasticFlasherESP32.swift */,
@@ -65,17 +63,8 @@
 				C564793125BE75DD00126AA8 /* Info.plist */,
 				C564793F25BE776C00126AA8 /* BluetoothLE.swift */,
 				C564793B25BE775A00126AA8 /* firmware */,
-				C564792E25BE75DD00126AA8 /* Preview Content */,
 			);
-			path = iOS_OTA_ESP32_NimBLE;
-			sourceTree = "<group>";
-		};
-		C564792E25BE75DD00126AA8 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				C564792F25BE75DD00126AA8 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
+			path = MeshtasticFlasher;
 			sourceTree = "<group>";
 		};
 		C564793B25BE775A00126AA8 /* firmware */ = {
@@ -143,7 +132,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C564793025BE75DD00126AA8 /* Preview Assets.xcassets in Resources */,
 				DD457186293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin in Resources */,
 				C564792D25BE75DD00126AA8 /* Assets.xcassets in Resources */,
 			);
@@ -289,10 +277,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iOS_OTA_ESP32_NimBLE/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = GCH7VS5Y9R;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS_OTA_ESP32_NimBLE/Info.plist;
+				INFOPLIST_FILE = MeshtasticFlasher/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Meshtastic DFU";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -314,10 +302,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iOS_OTA_ESP32_NimBLE/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = GCH7VS5Y9R;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS_OTA_ESP32_NimBLE/Info.plist;
+				INFOPLIST_FILE = MeshtasticFlasher/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Meshtastic DFU";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
