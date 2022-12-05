@@ -130,11 +130,9 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
         state = .disconnected
     }
     
-    // Disconnection (out of range, ...)
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         transferOngoing = false
-        print("\(Date()) CM DidDisconnectPeripheral")
-        print("\(Date()) \(peripheral.name ?? "unknown") disconnected")
+        print("\(peripheral.name ?? "unknown") disconnected")
         // Did our currently-connected peripheral just disconnect?
         if state.peripheral?.identifier == peripheral.identifier {
             name = ""
@@ -148,7 +146,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
                 // Try reconnect without setting a timeout in the state machine.
                 // With CB, it's like saying 'please reconnect me at any point
                 // in the future if this peripheral comes back into range'.
-                print("\(Date()) connect: try reconnect when back in range")
+                print("Connection failure, try and reconnect when the device is back in range")
                 manager.connect(peripheral, options: nil)
                 state = .outOfRange(peripheral)
             } else {
@@ -349,12 +347,11 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     }
     
     func setConnected(peripheral: CBPeripheral) {
-        print("\(Date()) FUNC SetConnected")
-        print("\(Date()) Max write value with response: \(peripheral.maximumWriteValueLength(for: .withResponse))")
-        print("\(Date()) Max write value without response: \(peripheral.maximumWriteValueLength(for: .withoutResponse))")
+        print("Max write value with response: \(peripheral.maximumWriteValueLength(for: .withResponse))")
+        print("Max write value without response: \(peripheral.maximumWriteValueLength(for: .withoutResponse))")
         guard let statusCharacteristic = peripheral.statusCharacteristic
         else {
-            print("\(Date()) Missing characteristic")
+            print("Missing status characteristic")
             disconnect()
             return
         }
@@ -374,11 +371,11 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     }
     
     func sendFile(filename: String, fileEnding: String) {
-        print("\(Date()) FUNC SendFile")
+        print("\(Date()) Start sending .bin file to device")
         
         // 1. Get the data from the file(name) and copy data to dataBUffer
         guard let data: Data = try? getBinFileToData(fileName: filename, fileEnding: fileEnding) else {
-            print("\(Date()) failed to open file")
+            print("Failed to open .bin file")
             return
         }
         dataBuffer = data
@@ -432,7 +429,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
             
             // 7. calculate and print the transfer progress in %
             transferProgress = (1 - (Double(dataBuffer.count) / Double(dataLength))) * 100
-            print("file transfer: \(transferProgress)%")
+            print("File transfer progress: \(String(format:"%.02f", transferProgress))%")
             sentBytes = sentBytes + chunkSize
             elapsedTime = CFAbsoluteTimeGetCurrent() - startTime
             let kbPs = Double(sentBytes) / elapsedTime
