@@ -6,10 +6,9 @@
 
 import CoreBluetooth
 
-private let myDesiredServiceId = CBUUID(string: "4FAFC201-1FB5-459E-8FCC-C5C9C331914B")  //Used for auto connect and re connect to this Service UIID only
-private let myDesiredCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130003")
-private let statusCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130003")  //ESP32 pTxCharacteristic ESP send (notifying)
-private let otaCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130005")//ESP32 pOtaCharacteristic  ESP write
+private let meshtasticOTAServiceId = CBUUID(string: "4FAFC201-1FB5-459E-8FCC-C5C9C331914B")
+private let statusCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130003") //ESP32 pTxCharacteristic ESP send (notifying)
+private let otaCharacteristicId = CBUUID(string: "62EC0272-3EC5-11EB-B378-0242AC130005") //ESP32 pOtaCharacteristic  ESP write
 
 private let outOfRangeHeuristics: Set<CBError.Code> = [.unknown, .connectionTimeout, .peripheralDisconnected, .connectionFailed]
 
@@ -53,10 +52,9 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     @Published var name = ""
     @Published var connected = false
     @Published var transferProgress : Double = 0.0
-    @Published var chunkCount = 4 // number of chunks to be sent before peripheral needs to accknowledge.
+    @Published var chunkCount = 2 // number of chunks to be sent before peripheral needs to accknowledge.
     @Published var elapsedTime = 0.0
     @Published var kBPerSecond = 0.0
-    
     
     //transfer varibles
     var dataToSend = Data()
@@ -77,28 +75,24 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
         manager.delegate = self
     }
     
-    // Callback from CentralManager when State updates (on, off, etc)
+    // CentralManager State updates
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        print("\(Date()) CM DidUpdateState")
+        print("Bluetooth State Updated")
         switch manager.state {
         case .unknown:
-            print("\(Date()) Unknown")
+            print("Unknown")
         case .resetting:
-            print("\(Date()) Resetting")
+            print("Resetting")
         case .unsupported:
-            print("\(Date()) Unsupported")
+            print("Unsupported")
         case .unauthorized:
-            print("\(Date()) Bluetooth disabled for this app, pls enable it in settings")
+            print("Bluetooth is disabled")
         case .poweredOff:
-            print("\(Date()) Turn on bluetooth")
+            print("Bluetooth is powered off")
         case .poweredOn:
-            print("\(Date()) Everything is ok :-) ")
-            if case .poweredOff = state {
-
-            }
-            print("\(Date()) End of .poweredOn")
+            print("Bluetooth is working properly")
         @unknown default:
-            print("\(Date()) fatal error")
+            print("fatal error")
         }
     }
     
@@ -124,7 +118,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
         // Make sure we get the discovery callbacks
         peripheral.delegate = self
         
-        if peripheral.myDesiredCharacteristic == nil {
+        if peripheral.statusCharacteristic == nil {
             discoverServices(peripheral: peripheral)
         } else {
             setConnected(peripheral: peripheral)
@@ -181,7 +175,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
             disconnect()
             return
         }
-        guard peripheral.myDesiredService != nil else {
+        guard peripheral.meshtasticOTAService != nil else {
             print("\(Date()) Desired service missing")
             disconnect()
             return
@@ -203,7 +197,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
             return
         }
         
-        guard peripheral.myDesiredCharacteristic != nil else {
+        guard peripheral.statusCharacteristic != nil else {
             print("\(Date()) Desired characteristic missing")
             disconnect()
             return
@@ -286,16 +280,16 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
      -------------------------------------------------------------------------*/
     // Scan for a device with the OTA Service UUID (myDesiredServiceId)
     func startScanning(){
-        print("\(Date()) FUNC StartScanning")
+        print("Scanning for Meshtastic Devices in OTA Mode")
         guard manager.state == .poweredOn else {
-            print("\(Date()) Cannot scan, BT is not powered on")
+            print("Cannot scan, Bluetooth is not powered on")
             return
         }
-        manager.scanForPeripherals(withServices: [myDesiredServiceId], options: nil)
+        manager.scanForPeripherals(withServices: [meshtasticOTAServiceId], options: nil)
         state = .scanning(Countdown(seconds: 10, closure: {
             self.manager.stopScan()
             self.state = .disconnected
-            print("\(Date()) Scan timed out")
+            print("Scan timed out")
         }))
     }
     
@@ -333,7 +327,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     func discoverServices(peripheral: CBPeripheral) {
         print("\(Date()) FUNC DiscoverServices")
         peripheral.delegate = self
-        peripheral.discoverServices([myDesiredServiceId])
+        peripheral.discoverServices([meshtasticOTAServiceId])
         state = .discoveringServices(peripheral, Countdown(seconds: 10, closure: {
             self.disconnect()
             print("\(Date()) Could not discover services")
@@ -343,11 +337,11 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     // Discover Characteristics of a Services
     func discoverCharacteristics(peripheral: CBPeripheral) {
         print("\(Date()) FUNC DiscoverCharacteristics")
-        guard let myDesiredService = peripheral.myDesiredService else {
+        guard let meshtasticOTAService = peripheral.meshtasticOTAService else {
             self.disconnect()
             return
         }
-        peripheral.discoverCharacteristics([myDesiredCharacteristicId], for: myDesiredService)
+        peripheral.discoverCharacteristics([statusCharacteristicId], for: meshtasticOTAService)
         state = .discoveringCharacteristics(peripheral,
                                             Countdown(seconds: 10,
                                                       closure: {
@@ -360,14 +354,14 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
         print("\(Date()) FUNC SetConnected")
         print("\(Date()) Max write value with response: \(peripheral.maximumWriteValueLength(for: .withResponse))")
         print("\(Date()) Max write value without response: \(peripheral.maximumWriteValueLength(for: .withoutResponse))")
-        guard let myDesiredCharacteristic = peripheral.myDesiredCharacteristic
+        guard let statusCharacteristic = peripheral.statusCharacteristic
         else {
             print("\(Date()) Missing characteristic")
             disconnect()
             return
         }
         
-        peripheral.setNotifyValue(true, for: myDesiredCharacteristic)
+        peripheral.setNotifyValue(true, for: statusCharacteristic)
         state = .connected(peripheral)
         connected = true
         name = String(peripheral.name ?? "unknown")
@@ -452,26 +446,23 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
 
 extension CBPeripheral {
     // Helper to find the service we're interested in.
-    var myDesiredService: CBService? {
+    var meshtasticOTAService: CBService? {
         guard let services = services else { return nil }
-        return services.first { $0.uuid == myDesiredServiceId }
+        return services.first { $0.uuid == meshtasticOTAServiceId }
     }
     // Helper to find the characteristic we're interested in.
-    var myDesiredCharacteristic: CBCharacteristic? {
-        guard let characteristics = myDesiredService?.characteristics else {
+    var statusCharacteristic: CBCharacteristic? {
+        guard let characteristics = meshtasticOTAService?.characteristics else {
             return nil
         }
-        return characteristics.first { $0.uuid == myDesiredCharacteristicId }
+        return characteristics.first { $0.uuid == statusCharacteristicId }
     }
 }
 
 class Countdown {
     let timer: Timer
     init(seconds: TimeInterval, closure: @escaping () -> ()) {
-        timer = Timer.scheduledTimer(withTimeInterval: seconds,
-                                     repeats: false, block: { _ in
-                                        closure()
-                                     })
+        timer = Timer.scheduledTimer(withTimeInterval: seconds, repeats: false, block: { _ in closure() })
     }
     deinit {
         timer.invalidate()
