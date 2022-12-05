@@ -100,15 +100,14 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         guard case .scanning = state else { return }
         name = String(peripheral.name ?? "unknown")
-        print("\(Date()) \(name) is found")
-        print("\(Date()) CM DidDiscover")
+        print("Discovered \(name)")
         manager.stopScan()
         connect(peripheral: peripheral)
     }
     
     // Connection established handler
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        print("\(Date()) CM DidConnect")
+        print("Connection suceeded")
         
         transferOngoing = false
         
@@ -165,18 +164,18 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
   
     // Discover BLE device service(s)
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-        print("\(Date()) PH didDiscoverServices")
+        print("Discovered Bluetooth Services")
         // Ignore services discovered late.
         guard case .discoveringServices = state else {
             return
         }
         if let error = error {
-            print("\(Date()) Failed to discover services: \(error)")
+            print("Failed to discover services: \(error)")
             disconnect()
             return
         }
         guard peripheral.meshtasticOTAService != nil else {
-            print("\(Date()) Desired service missing")
+            print("Meshtastic OTA service missing")
             disconnect()
             return
         }
@@ -189,10 +188,10 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     }
     // Discover BLE device Service charachteristics
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        print("\(Date()) PH didDiscoverCharacteristicsFor")
+        print("Discovering Characteristics For Meshtastic OTA Service")
         
         if let error = error {
-            print("\(Date()) Failed to discover characteristics: \(error)")
+            print("Failed to discover characteristics: \(error)")
             disconnect()
             return
         }
@@ -213,12 +212,12 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
             
             case statusCharacteristicId:
                 statusCharacteristic = characteristic
-                print("\(Date()) receive status from: \(statusCharacteristic!.uuid as Any)")
+                print("Discovered Status Characteristic: \(statusCharacteristic!.uuid as Any)")
                 peripheral.setNotifyValue(true, for: characteristic)
             
             case otaCharacteristicId:
                 otaCharacteristic = characteristic
-                print("\(Date()) send OTA firmware to: \(otaCharacteristic!.uuid as Any)")
+                print("Discovered OTA Characteristic: \(otaCharacteristic!.uuid as Any)")
                 peripheral.setNotifyValue(false, for: characteristic)
                     
             default:
@@ -294,7 +293,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     }
     
     func disconnect() {
-        print("\(Date()) FUNC Disconnect")
+        print("Disconnect")
         if let peripheral = state.peripheral {
             manager.cancelPeripheralConnection(peripheral)
         }
@@ -305,27 +304,26 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     
     // Connect to the device from the scanning
     func connect(peripheral: CBPeripheral){
-        print("\(Date()) FUNC Connect")
+        print("Connect Button Pushed")
         if connected {
             manager.cancelPeripheralConnection(peripheral)
         }else{
             // Connect!
-            print("\(Date()) connect: connect inside func connect()")
             manager.connect(peripheral, options: nil)
             name = String(peripheral.name ?? "unknown")
-            print("\(Date()) \(name) is found")
+            print("Attempting connection to \(name)")
             state = .connecting(peripheral, Countdown(seconds: 10, closure: {
                 self.manager.cancelPeripheralConnection(self.state.peripheral!)
                 self.state = .disconnected
                 self.connected = false
-                print("\(Date()) Connect timed out")
+                print("Attempted connection to \(self.name) timed out")
             }))
         }
     }
     
     // Discover Services of a device
     func discoverServices(peripheral: CBPeripheral) {
-        print("\(Date()) FUNC DiscoverServices")
+        print("Discovering Meshtastic OTA service")
         peripheral.delegate = self
         peripheral.discoverServices([meshtasticOTAServiceId])
         state = .discoveringServices(peripheral, Countdown(seconds: 10, closure: {
@@ -336,7 +334,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     
     // Discover Characteristics of a Services
     func discoverCharacteristics(peripheral: CBPeripheral) {
-        print("\(Date()) FUNC DiscoverCharacteristics")
+        print("Discovering characteristics for Meshtastic OTA service")
         guard let meshtasticOTAService = peripheral.meshtasticOTAService else {
             self.disconnect()
             return
