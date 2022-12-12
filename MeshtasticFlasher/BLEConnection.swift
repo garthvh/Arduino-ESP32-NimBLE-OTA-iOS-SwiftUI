@@ -1,7 +1,7 @@
 //
-//  BluetoothLE.swift
+//  BLEConnection.swift
 //
-//
+//  Created by Garth Vander Houwen on 12/4/22
 //
 
 import CoreBluetooth
@@ -371,7 +371,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     }
     
     func sendFile(filename: String, fileEnding: String) {
-        print("\(Date()) Start sending .bin file to device")
+        print("Start sending .bin file to device")
         
         // 1. Get the data from the file(name) and copy data to dataBUffer
         guard let data: Data = try? getBinFileToData(fileName: filename, fileEnding: fileEnding) else {

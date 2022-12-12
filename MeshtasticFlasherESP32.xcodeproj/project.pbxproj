@@ -7,23 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C564792925BE75DC00126AA8 /* MeshtasticFlasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564792825BE75DC00126AA8 /* MeshtasticFlasher.swift */; };
+		C564792925BE75DC00126AA8 /* MeshtasticFlasherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564792825BE75DC00126AA8 /* MeshtasticFlasherApp.swift */; };
 		C564792B25BE75DC00126AA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564792A25BE75DC00126AA8 /* ContentView.swift */; };
 		C564792D25BE75DD00126AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C564792C25BE75DD00126AA8 /* Assets.xcassets */; };
-		C564793925BE763500126AA8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793825BE763500126AA8 /* Helpers.swift */; };
+		C564793925BE763500126AA8 /* FileHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793825BE763500126AA8 /* FileHelpers.swift */; };
 		C564794025BE776C00126AA8 /* BLEConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793F25BE776C00126AA8 /* BLEConnection.swift */; };
-		DD457186293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DD457185293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin */; };
+		DDCDC6AE2947D098004C1DDA /* firmware-tbeam-s3-core-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC69B2947D097004C1DDA /* firmware-tbeam-s3-core-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6AF2947D098004C1DDA /* firmware-meshtastic-diy-v1-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC69C2947D097004C1DDA /* firmware-meshtastic-diy-v1-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6B02947D098004C1DDA /* firmware-station-g1-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC69D2947D097004C1DDA /* firmware-station-g1-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6B12947D098004C1DDA /* firmware-tlora_v1_3-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC69E2947D097004C1DDA /* firmware-tlora_v1_3-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6B22947D098004C1DDA /* firmware-tlora-v2-1-1.6-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC69F2947D097004C1DDA /* firmware-tlora-v2-1-1.6-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6B32947D098004C1DDA /* firmware-rak11200-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6A02947D097004C1DDA /* firmware-rak11200-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6B42947D098004C1DDA /* firmware-heltec-v2.0-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6A12947D097004C1DDA /* firmware-heltec-v2.0-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6B52947D098004C1DDA /* firmware-tbeam-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6A22947D097004C1DDA /* firmware-tbeam-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6B62947D098004C1DDA /* firmware-tbeam0.7-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6A32947D097004C1DDA /* firmware-tbeam0.7-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6B72947D098004C1DDA /* firmware-m5stack-coreink-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6A42947D097004C1DDA /* firmware-m5stack-coreink-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6B82947D098004C1DDA /* firmware-tlora-v1-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6A52947D097004C1DDA /* firmware-tlora-v1-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6B92947D098004C1DDA /* firmware-heltec-wsl-v3-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6A62947D097004C1DDA /* firmware-heltec-wsl-v3-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6BA2947D098004C1DDA /* firmware-m5stack-core-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6A72947D097004C1DDA /* firmware-m5stack-core-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6BB2947D098004C1DDA /* firmware-meshtastic-dr-dev-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6A82947D097004C1DDA /* firmware-meshtastic-dr-dev-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6BC2947D098004C1DDA /* firmware-heltec-v2.1-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6A92947D097004C1DDA /* firmware-heltec-v2.1-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6BD2947D098004C1DDA /* firmware-nano-g1-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6AA2947D097004C1DDA /* firmware-nano-g1-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6BE2947D098004C1DDA /* firmware-tlora-v2-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6AB2947D097004C1DDA /* firmware-tlora-v2-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6BF2947D098004C1DDA /* firmware-heltec-v1-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6AC2947D097004C1DDA /* firmware-heltec-v1-2.0.7.91ff7b9-update.bin */; };
+		DDCDC6C02947D098004C1DDA /* firmware-heltec-v3-2.0.7.91ff7b9-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDCDC6AD2947D097004C1DDA /* firmware-heltec-v3-2.0.7.91ff7b9-update.bin */; };
+		DDF593CF293F1F4700E7B4E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF593CE293F1F4700E7B4E6 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C564792525BE75DC00126AA8 /* MeshtasticFlasherESP32.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeshtasticFlasherESP32.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C564792825BE75DC00126AA8 /* MeshtasticFlasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshtasticFlasher.swift; sourceTree = "<group>"; };
+		C564792525BE75DC00126AA8 /* Meshtastic DFU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meshtastic DFU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C564792825BE75DC00126AA8 /* MeshtasticFlasherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshtasticFlasherApp.swift; sourceTree = "<group>"; };
 		C564792A25BE75DC00126AA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C564792C25BE75DD00126AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C564793125BE75DD00126AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C564793825BE763500126AA8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		C564793825BE763500126AA8 /* FileHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelpers.swift; sourceTree = "<group>"; };
 		C564793F25BE776C00126AA8 /* BLEConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEConnection.swift; sourceTree = "<group>"; };
-		DD457185293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam-2.0.6-update.bin"; sourceTree = "<group>"; };
+		DDCDC69B2947D097004C1DDA /* firmware-tbeam-s3-core-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam-s3-core-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC69C2947D097004C1DDA /* firmware-meshtastic-diy-v1-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-meshtastic-diy-v1-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC69D2947D097004C1DDA /* firmware-station-g1-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-station-g1-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC69E2947D097004C1DDA /* firmware-tlora_v1_3-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora_v1_3-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC69F2947D097004C1DDA /* firmware-tlora-v2-1-1.6-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v2-1-1.6-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6A02947D097004C1DDA /* firmware-rak11200-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-rak11200-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6A12947D097004C1DDA /* firmware-heltec-v2.0-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v2.0-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6A22947D097004C1DDA /* firmware-tbeam-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6A32947D097004C1DDA /* firmware-tbeam0.7-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam0.7-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6A42947D097004C1DDA /* firmware-m5stack-coreink-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-m5stack-coreink-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6A52947D097004C1DDA /* firmware-tlora-v1-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v1-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6A62947D097004C1DDA /* firmware-heltec-wsl-v3-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-wsl-v3-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6A72947D097004C1DDA /* firmware-m5stack-core-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-m5stack-core-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6A82947D097004C1DDA /* firmware-meshtastic-dr-dev-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-meshtastic-dr-dev-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6A92947D097004C1DDA /* firmware-heltec-v2.1-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v2.1-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6AA2947D097004C1DDA /* firmware-nano-g1-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-nano-g1-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6AB2947D097004C1DDA /* firmware-tlora-v2-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v2-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6AC2947D097004C1DDA /* firmware-heltec-v1-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v1-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDCDC6AD2947D097004C1DDA /* firmware-heltec-v3-2.0.7.91ff7b9-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v3-2.0.7.91ff7b9-update.bin"; sourceTree = "<group>"; };
+		DDF593CE293F1F4700E7B4E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +86,7 @@
 		C564792625BE75DC00126AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C564792525BE75DC00126AA8 /* MeshtasticFlasherESP32.app */,
+				C564792525BE75DC00126AA8 /* Meshtastic DFU.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,13 +94,14 @@
 		C564792725BE75DC00126AA8 /* MeshtasticFlasher */ = {
 			isa = PBXGroup;
 			children = (
-				C564792825BE75DC00126AA8 /* MeshtasticFlasher.swift */,
+				C564792825BE75DC00126AA8 /* MeshtasticFlasherApp.swift */,
 				C564792A25BE75DC00126AA8 /* ContentView.swift */,
-				C564793825BE763500126AA8 /* Helpers.swift */,
+				C564793825BE763500126AA8 /* FileHelpers.swift */,
 				C564792C25BE75DD00126AA8 /* Assets.xcassets */,
 				C564793125BE75DD00126AA8 /* Info.plist */,
 				C564793F25BE776C00126AA8 /* BLEConnection.swift */,
 				C564793B25BE775A00126AA8 /* firmware */,
+				DDF593CE293F1F4700E7B4E6 /* Extensions.swift */,
 			);
 			path = MeshtasticFlasher;
 			sourceTree = "<group>";
@@ -70,7 +109,25 @@
 		C564793B25BE775A00126AA8 /* firmware */ = {
 			isa = PBXGroup;
 			children = (
-				DD457185293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin */,
+				DDCDC6AC2947D097004C1DDA /* firmware-heltec-v1-2.0.7.91ff7b9-update.bin */,
+				DDCDC6A12947D097004C1DDA /* firmware-heltec-v2.0-2.0.7.91ff7b9-update.bin */,
+				DDCDC6A92947D097004C1DDA /* firmware-heltec-v2.1-2.0.7.91ff7b9-update.bin */,
+				DDCDC6AD2947D097004C1DDA /* firmware-heltec-v3-2.0.7.91ff7b9-update.bin */,
+				DDCDC6A62947D097004C1DDA /* firmware-heltec-wsl-v3-2.0.7.91ff7b9-update.bin */,
+				DDCDC6A72947D097004C1DDA /* firmware-m5stack-core-2.0.7.91ff7b9-update.bin */,
+				DDCDC6A42947D097004C1DDA /* firmware-m5stack-coreink-2.0.7.91ff7b9-update.bin */,
+				DDCDC69C2947D097004C1DDA /* firmware-meshtastic-diy-v1-2.0.7.91ff7b9-update.bin */,
+				DDCDC6A82947D097004C1DDA /* firmware-meshtastic-dr-dev-2.0.7.91ff7b9-update.bin */,
+				DDCDC6AA2947D097004C1DDA /* firmware-nano-g1-2.0.7.91ff7b9-update.bin */,
+				DDCDC6A02947D097004C1DDA /* firmware-rak11200-2.0.7.91ff7b9-update.bin */,
+				DDCDC69D2947D097004C1DDA /* firmware-station-g1-2.0.7.91ff7b9-update.bin */,
+				DDCDC6A22947D097004C1DDA /* firmware-tbeam-2.0.7.91ff7b9-update.bin */,
+				DDCDC69B2947D097004C1DDA /* firmware-tbeam-s3-core-2.0.7.91ff7b9-update.bin */,
+				DDCDC6A32947D097004C1DDA /* firmware-tbeam0.7-2.0.7.91ff7b9-update.bin */,
+				DDCDC69E2947D097004C1DDA /* firmware-tlora_v1_3-2.0.7.91ff7b9-update.bin */,
+				DDCDC6A52947D097004C1DDA /* firmware-tlora-v1-2.0.7.91ff7b9-update.bin */,
+				DDCDC69F2947D097004C1DDA /* firmware-tlora-v2-1-1.6-2.0.7.91ff7b9-update.bin */,
+				DDCDC6AB2947D097004C1DDA /* firmware-tlora-v2-2.0.7.91ff7b9-update.bin */,
 			);
 			path = firmware;
 			sourceTree = "<group>";
@@ -91,8 +148,10 @@
 			dependencies = (
 			);
 			name = MeshtasticFlasherESP32;
+			packageProductDependencies = (
+			);
 			productName = iOS_OTA_ESP32;
-			productReference = C564792525BE75DC00126AA8 /* MeshtasticFlasherESP32.app */;
+			productReference = C564792525BE75DC00126AA8 /* Meshtastic DFU.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,6 +177,8 @@
 				Base,
 			);
 			mainGroup = C564791C25BE75DC00126AA8;
+			packageReferences = (
+			);
 			productRefGroup = C564792625BE75DC00126AA8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -132,8 +193,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD457186293C65DE000C49FB /* firmware-tbeam-2.0.6-update.bin in Resources */,
+				DDCDC6BF2947D098004C1DDA /* firmware-heltec-v1-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6B72947D098004C1DDA /* firmware-m5stack-coreink-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6BD2947D098004C1DDA /* firmware-nano-g1-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6B82947D098004C1DDA /* firmware-tlora-v1-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6BB2947D098004C1DDA /* firmware-meshtastic-dr-dev-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6B32947D098004C1DDA /* firmware-rak11200-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6B02947D098004C1DDA /* firmware-station-g1-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6BE2947D098004C1DDA /* firmware-tlora-v2-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6AE2947D098004C1DDA /* firmware-tbeam-s3-core-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6B52947D098004C1DDA /* firmware-tbeam-2.0.7.91ff7b9-update.bin in Resources */,
 				C564792D25BE75DD00126AA8 /* Assets.xcassets in Resources */,
+				DDCDC6C02947D098004C1DDA /* firmware-heltec-v3-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6B12947D098004C1DDA /* firmware-tlora_v1_3-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6B22947D098004C1DDA /* firmware-tlora-v2-1-1.6-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6B62947D098004C1DDA /* firmware-tbeam0.7-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6B42947D098004C1DDA /* firmware-heltec-v2.0-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6BA2947D098004C1DDA /* firmware-m5stack-core-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6B92947D098004C1DDA /* firmware-heltec-wsl-v3-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6AF2947D098004C1DDA /* firmware-meshtastic-diy-v1-2.0.7.91ff7b9-update.bin in Resources */,
+				DDCDC6BC2947D098004C1DDA /* firmware-heltec-v2.1-2.0.7.91ff7b9-update.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,9 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF593CF293F1F4700E7B4E6 /* Extensions.swift in Sources */,
 				C564792B25BE75DC00126AA8 /* ContentView.swift in Sources */,
-				C564792925BE75DC00126AA8 /* MeshtasticFlasher.swift in Sources */,
-				C564793925BE763500126AA8 /* Helpers.swift in Sources */,
+				C564792925BE75DC00126AA8 /* MeshtasticFlasherApp.swift in Sources */,
+				C564793925BE763500126AA8 /* FileHelpers.swift in Sources */,
 				C564794025BE776C00126AA8 /* BLEConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +289,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Meshtastic DFU";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -263,6 +344,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Meshtastic DFU";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -288,8 +370,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gvh.MeshtasticFlasherESP32;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = gvh.MeshtasticFlasher;
+				PRODUCT_NAME = "Meshtastic DFU";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -313,8 +395,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gvh.MeshtasticFlasherESP32;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = gvh.MeshtasticFlasher;
+				PRODUCT_NAME = "Meshtastic DFU";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

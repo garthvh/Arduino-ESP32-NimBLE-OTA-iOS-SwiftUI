@@ -1,9 +1,7 @@
 //
-//  Helpers.swift
+//  FileHelpers.swift
+//  Created by Garth Vander Houwen on 12/4/22
 //
-//  Created by Claes Hallberg on 7/6/20.
-//  Copyright © 2020 Claes Hallberg. All rights reserved.
-//  Licence: MIT
 
 import Foundation
 

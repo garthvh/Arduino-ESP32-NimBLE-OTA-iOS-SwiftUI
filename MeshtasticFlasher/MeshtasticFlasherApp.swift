@@ -7,14 +7,15 @@
 import SwiftUI
 
 @main
-struct MeshtasticFlasher: App {
-    
+struct MeshtasticFlasherApp: App {
+
     var ble  = BLEConnection()
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(ble)
+            NavigationView {
+                ContentView()
+                    .environmentObject(ble)
+            }.navigationViewStyle(.stack)
         }
     }
 }
-
