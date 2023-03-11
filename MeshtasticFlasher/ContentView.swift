@@ -23,7 +23,7 @@ struct ContentView: View {
             
             let name = val.relativeString
                 .replacingOccurrences(of: "firmware-", with: "")
-                .replacingOccurrences(of: "2.0.7.91ff7b9-update.bin", with: "")
+                .replacingOccurrences(of: "2.1.0.331a1af-update.bin", with: "")
                 .replacingOccurrences(of: "-", with: " ")
             
             let value = val.relativeString
@@ -48,7 +48,7 @@ struct ContentView: View {
                 .bold()
                 .multilineTextAlignment(.center)
                 .padding(.top)
-            Text("Wireless Firmware Update Tool for ESP32 Devices version 2.0.7")
+            Text("Wireless Firmware Update Tool for ESP32 Devices version 2.1.0")
                 .font(.title2)
                 .multilineTextAlignment(.center)
             Spacer()
