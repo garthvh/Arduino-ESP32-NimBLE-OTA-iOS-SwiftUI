@@ -13,8 +13,12 @@ struct FirmwareFile : Identifiable {
 
 struct ContentView: View {
     @EnvironmentObject var ble : BLEConnection
+    @State private var firmwareReleaseData: FirmwareRelease = FirmwareRelease()
     @State var firmwareFiles: [FirmwareFile]
     @State var selectedFile: String = "tbeam"
+    @State var selectedStableFirmwareVersion: String = ""
+    @State var selectedFirmwareVersion: String = "0.0.0"
+    @State var firmwareGroup: String = "stable"
     
     init () {
         var firmwares: [FirmwareFile]? = []
@@ -23,7 +27,7 @@ struct ContentView: View {
             
             let name = val.relativeString
                 .replacingOccurrences(of: "firmware-", with: "")
-                .replacingOccurrences(of: "2.1.0.331a1af-update.bin", with: "")
+                .replacingOccurrences(of: "2.1.2.6d20215-update.bin", with: "")
                 .replacingOccurrences(of: "-", with: " ")
             
             let value = val.relativeString
@@ -48,10 +52,52 @@ struct ContentView: View {
                 .bold()
                 .multilineTextAlignment(.center)
                 .padding(.top)
-            Text("Wireless Firmware Update Tool for ESP32 Devices version 2.1.0")
+            Text("Wireless Firmware Update Tool for ESP32 Devices")
                 .font(.title2)
                 .multilineTextAlignment(.center)
-            Spacer()
+           // Spacer()
+            Picker("Yolo level", selection: $firmwareGroup ) {
+                Text("Stable").tag("stable")
+                Text("Alpha").tag("alpha")
+                Text("Pull Request").tag("pullRequests")
+            }
+            .pickerStyle(.segmented)
+            if firmwareGroup == "stable" {
+                Picker("Firmware Version", selection: $selectedStableFirmwareVersion ) {
+                    ForEach(firmwareReleaseData.releases?.stable ?? [], id: \.id) { fr in
+                        Text(fr.title ?? "Unknown")
+                            .tag(fr.id)
+                            .font(.caption)
+                    }
+                }
+                .pickerStyle(DefaultPickerStyle())
+            } else if firmwareGroup == "alpha" {
+                Picker("Firmware Version", selection: $selectedFirmwareVersion ) {
+                    ForEach(firmwareReleaseData.releases?.alpha ?? [], id: \.id) { fr in
+                        Link(destination: URL(string: fr.zipUrl ?? "")!) {
+                            HStack {
+                                Text(fr.title ?? "Unknown")
+                                    .tag(fr.id)
+                                    .font(.caption)
+                            }
+                        }
+                    }
+                }
+                .pickerStyle(DefaultPickerStyle())
+            } else if firmwareGroup == "pullRequests" {
+                Picker("Firmware Version", selection: $selectedFirmwareVersion ) {
+                    ForEach(firmwareReleaseData.pullRequests ?? [], id: \.id) { fr in
+                        Link(destination: URL(string: fr.zipUrl ?? "")!) {
+                            HStack {
+                                Text(fr.title ?? "Unknown")
+                                    .tag(fr.id)
+                                    .font(.caption)
+                            }
+                        }
+                    }
+                }
+                .pickerStyle(DefaultPickerStyle())
+            }
             
             HStack{
                 
@@ -144,10 +190,78 @@ struct ContentView: View {
                 Spacer()
             }
         }
-        .onAppear { UIApplication.shared.isIdleTimerDisabled = true }
+        .onAppear {
+            loadData()
+            UIApplication.shared.isIdleTimerDisabled = true
+            
+            let url = URL(string: "https://github.com/meshtastic/firmware/releases/download/v2.1.1.dc2ca9c/firmware-2.1.1.dc2ca9c.zip")
+            
+            let downloadTask = URLSession.shared.downloadTask(with: url!) {
+                urlOrNil, responseOrNil, errorOrNil in
+                // check for and handle errors:
+                // * errorOrNil should be nil
+                // * responseOrNil should be an HTTPURLResponse with statusCode in 200..<299
+
+                guard let fileURL = urlOrNil else { return }
+                do {
+                    let documentsURL = try
+                        FileManager.default.url(for: .documentDirectory,
+                                                in: .userDomainMask,
+                                                appropriateFor: nil,
+                                                create: false)
+                    let savedURL = documentsURL.appendingPathComponent(fileURL.lastPathComponent)
+                    print(fileURL)
+                    try FileManager.default.moveItem(at: fileURL, to: savedURL)
+                } catch {
+                    print ("file error: \(error)")
+                }
+            }
+            downloadTask.resume()
+            
+        }
         .onDisappear { UIApplication.shared.isIdleTimerDisabled = false }
         .padding()
         
         Spacer()
     }
+    
+    func loadData() {
+        
+        guard let url = URL(string: "https://api.meshtastic.org/github/firmware/list") else {
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let data = data {
+                if let response_obj = try? JSONDecoder().decode(FirmwareRelease.self, from: data) {
+                    
+                    DispatchQueue.main.async {
+                        self.firmwareReleaseData = response_obj
+                    }
+                }
+            }
+            
+        }.resume()
+    }
+}
+
+
+func saveFile(url: URL, destination: URL, completion: @escaping (Bool) -> Void){
+    URLSession.shared.downloadTask(with: url, completionHandler: { (location, response, error) in
+        // after downloading your data you need to save it to your destination url
+        guard
+            let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+            let location = location, error == nil
+            else { print("error with the url response"); completion(false); return}
+        do {
+            try FileManager.default.moveItem(at: location, to: destination)
+            print("new file saved")
+            completion(true)
+        } catch {
+            print("file could not be saved: \(error)")
+            completion(false)
+        }
+    }).resume()
 }
