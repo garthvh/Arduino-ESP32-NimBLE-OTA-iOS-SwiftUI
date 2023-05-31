@@ -27,7 +27,7 @@ struct ContentView: View {
             
             let name = val.relativeString
                 .replacingOccurrences(of: "firmware-", with: "")
-                .replacingOccurrences(of: "2.1.2.6d20215-update.bin", with: "")
+                .replacingOccurrences(of: "2.1.10.7ef12c7-update.bin", with: "")
                 .replacingOccurrences(of: "-", with: " ")
             
             let value = val.relativeString
@@ -194,7 +194,7 @@ struct ContentView: View {
             loadData()
             UIApplication.shared.isIdleTimerDisabled = true
             
-            let url = URL(string: "https://github.com/meshtastic/firmware/releases/download/v2.1.1.dc2ca9c/firmware-2.1.1.dc2ca9c.zip")
+            let url = URL(string: "https://github.com/meshtastic/firmware/releases/download/v2.1.10.7ef12c7/firmware-2.1.10.7ef12c7.zip")
             
             let downloadTask = URLSession.shared.downloadTask(with: url!) {
                 urlOrNil, responseOrNil, errorOrNil in
