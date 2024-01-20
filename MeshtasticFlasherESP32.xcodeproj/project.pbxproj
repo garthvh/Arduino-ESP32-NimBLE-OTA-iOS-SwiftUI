@@ -13,28 +13,35 @@
 		C564793925BE763500126AA8 /* FileHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793825BE763500126AA8 /* FileHelpers.swift */; };
 		C564794025BE776C00126AA8 /* BLEConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564793F25BE776C00126AA8 /* BLEConnection.swift */; };
 		DD2DC2BE29BC44A5003B383C /* MestasticApiJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2DC2BD29BC44A5003B383C /* MestasticApiJson.swift */; };
-		DDB759F82A058CAA006ED576 /* firmware-m5stack-coreink-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759E22A058CA9006ED576 /* firmware-m5stack-coreink-2.1.10.7ef12c7-update.bin */; };
-		DDB759F92A058CAA006ED576 /* firmware-tlora-v1-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759E32A058CA9006ED576 /* firmware-tlora-v1-2.1.10.7ef12c7-update.bin */; };
-		DDB759FA2A058CAA006ED576 /* firmware-tbeam-s3-core-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759E42A058CA9006ED576 /* firmware-tbeam-s3-core-2.1.10.7ef12c7-update.bin */; };
-		DDB759FB2A058CAA006ED576 /* firmware-rak11200-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759E52A058CA9006ED576 /* firmware-rak11200-2.1.10.7ef12c7-update.bin */; };
-		DDB759FC2A058CAA006ED576 /* firmware-heltec-v2.1-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759E62A058CAA006ED576 /* firmware-heltec-v2.1-2.1.10.7ef12c7-update.bin */; };
-		DDB759FD2A058CAA006ED576 /* firmware-heltec-wsl-v3-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759E72A058CAA006ED576 /* firmware-heltec-wsl-v3-2.1.10.7ef12c7-update.bin */; };
-		DDB759FE2A058CAA006ED576 /* firmware-nano-g1-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759E82A058CAA006ED576 /* firmware-nano-g1-2.1.10.7ef12c7-update.bin */; };
-		DDB759FF2A058CAA006ED576 /* firmware-heltec-v1-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759E92A058CAA006ED576 /* firmware-heltec-v1-2.1.10.7ef12c7-update.bin */; };
-		DDB75A002A058CAA006ED576 /* firmware-tlora_v1_3-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759EA2A058CAA006ED576 /* firmware-tlora_v1_3-2.1.10.7ef12c7-update.bin */; };
-		DDB75A012A058CAA006ED576 /* firmware-tlora-v2-1-1.8-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759EB2A058CAA006ED576 /* firmware-tlora-v2-1-1.8-2.1.10.7ef12c7-update.bin */; };
-		DDB75A022A058CAA006ED576 /* firmware-tlora-t3s3-v1-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759EC2A058CAA006ED576 /* firmware-tlora-t3s3-v1-2.1.10.7ef12c7-update.bin */; };
-		DDB75A032A058CAA006ED576 /* firmware-heltec-v2.0-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759ED2A058CAA006ED576 /* firmware-heltec-v2.0-2.1.10.7ef12c7-update.bin */; };
-		DDB75A042A058CAA006ED576 /* firmware-station-g1-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759EE2A058CAA006ED576 /* firmware-station-g1-2.1.10.7ef12c7-update.bin */; };
-		DDB75A052A058CAA006ED576 /* firmware-tlora-v2-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759EF2A058CAA006ED576 /* firmware-tlora-v2-2.1.10.7ef12c7-update.bin */; };
-		DDB75A062A058CAA006ED576 /* firmware-nano-g1-explorer-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759F02A058CAA006ED576 /* firmware-nano-g1-explorer-2.1.10.7ef12c7-update.bin */; };
-		DDB75A072A058CAA006ED576 /* firmware-tbeam0.7-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759F12A058CAA006ED576 /* firmware-tbeam0.7-2.1.10.7ef12c7-update.bin */; };
-		DDB75A082A058CAA006ED576 /* firmware-meshtastic-dr-dev-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759F22A058CAA006ED576 /* firmware-meshtastic-dr-dev-2.1.10.7ef12c7-update.bin */; };
-		DDB75A092A058CAA006ED576 /* firmware-m5stack-core-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759F32A058CAA006ED576 /* firmware-m5stack-core-2.1.10.7ef12c7-update.bin */; };
-		DDB75A0A2A058CAA006ED576 /* firmware-tlora-v2-1-1.6-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759F42A058CAA006ED576 /* firmware-tlora-v2-1-1.6-2.1.10.7ef12c7-update.bin */; };
-		DDB75A0B2A058CAA006ED576 /* firmware-heltec-v3-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759F52A058CAA006ED576 /* firmware-heltec-v3-2.1.10.7ef12c7-update.bin */; };
-		DDB75A0C2A058CAA006ED576 /* firmware-meshtastic-diy-v1-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759F62A058CAA006ED576 /* firmware-meshtastic-diy-v1-2.1.10.7ef12c7-update.bin */; };
-		DDB75A0D2A058CAA006ED576 /* firmware-tbeam-2.1.10.7ef12c7-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB759F72A058CAA006ED576 /* firmware-tbeam-2.1.10.7ef12c7-update.bin */; };
+		DDB2341C2B5C480200DA6FB1 /* firmware-tbeam-s3-core-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB233FF2B5C480000DA6FB1 /* firmware-tbeam-s3-core-2.2.18.e9bde80-update.bin */; };
+		DDB2341D2B5C480200DA6FB1 /* firmware-t-watch-s3-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234002B5C480000DA6FB1 /* firmware-t-watch-s3-2.2.18.e9bde80-update.bin */; };
+		DDB2341E2B5C480200DA6FB1 /* firmware-heltec-v3-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234012B5C480100DA6FB1 /* firmware-heltec-v3-2.2.18.e9bde80-update.bin */; };
+		DDB2341F2B5C480200DA6FB1 /* firmware-station-g1-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234022B5C480100DA6FB1 /* firmware-station-g1-2.2.18.e9bde80-update.bin */; };
+		DDB234202B5C480200DA6FB1 /* firmware-rak11200-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234032B5C480100DA6FB1 /* firmware-rak11200-2.2.18.e9bde80-update.bin */; };
+		DDB234212B5C480200DA6FB1 /* firmware-heltec-v2_0-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234042B5C480100DA6FB1 /* firmware-heltec-v2_0-2.2.18.e9bde80-update.bin */; };
+		DDB234222B5C480200DA6FB1 /* firmware-picomputer-s3-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234052B5C480100DA6FB1 /* firmware-picomputer-s3-2.2.18.e9bde80-update.bin */; };
+		DDB234232B5C480200DA6FB1 /* firmware-m5stack-core-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234062B5C480100DA6FB1 /* firmware-m5stack-core-2.2.18.e9bde80-update.bin */; };
+		DDB234242B5C480200DA6FB1 /* firmware-heltec-v1-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234072B5C480100DA6FB1 /* firmware-heltec-v1-2.2.18.e9bde80-update.bin */; };
+		DDB234252B5C480200DA6FB1 /* firmware-heltec-wireless-paper-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234082B5C480100DA6FB1 /* firmware-heltec-wireless-paper-2.2.18.e9bde80-update.bin */; };
+		DDB234262B5C480200DA6FB1 /* firmware-heltec-wsl-v3-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234092B5C480100DA6FB1 /* firmware-heltec-wsl-v3-2.2.18.e9bde80-update.bin */; };
+		DDB234272B5C480200DA6FB1 /* firmware-heltec-wireless-tracker-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB2340A2B5C480100DA6FB1 /* firmware-heltec-wireless-tracker-2.2.18.e9bde80-update.bin */; };
+		DDB234282B5C480200DA6FB1 /* firmware-nano-g1-explorer-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB2340B2B5C480100DA6FB1 /* firmware-nano-g1-explorer-2.2.18.e9bde80-update.bin */; };
+		DDB234292B5C480200DA6FB1 /* firmware-heltec-v2_1-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB2340C2B5C480100DA6FB1 /* firmware-heltec-v2_1-2.2.18.e9bde80-update.bin */; };
+		DDB2342A2B5C480200DA6FB1 /* firmware-tlora-t3s3-v1-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB2340D2B5C480100DA6FB1 /* firmware-tlora-t3s3-v1-2.2.18.e9bde80-update.bin */; };
+		DDB2342B2B5C480200DA6FB1 /* firmware-tlora_v1_3-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB2340E2B5C480100DA6FB1 /* firmware-tlora_v1_3-2.2.18.e9bde80-update.bin */; };
+		DDB2342C2B5C480200DA6FB1 /* firmware-tlora-v2-1-1_8-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB2340F2B5C480200DA6FB1 /* firmware-tlora-v2-1-1_8-2.2.18.e9bde80-update.bin */; };
+		DDB2342D2B5C480200DA6FB1 /* firmware-m5stack-coreink-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234102B5C480200DA6FB1 /* firmware-m5stack-coreink-2.2.18.e9bde80-update.bin */; };
+		DDB2342E2B5C480200DA6FB1 /* firmware-meshtastic-dr-dev-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234112B5C480200DA6FB1 /* firmware-meshtastic-dr-dev-2.2.18.e9bde80-update.bin */; };
+		DDB2342F2B5C480200DA6FB1 /* firmware-nano-g1-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234122B5C480200DA6FB1 /* firmware-nano-g1-2.2.18.e9bde80-update.bin */; };
+		DDB234302B5C480200DA6FB1 /* firmware-tlora-v2-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234132B5C480200DA6FB1 /* firmware-tlora-v2-2.2.18.e9bde80-update.bin */; };
+		DDB234312B5C480200DA6FB1 /* firmware-meshtastic-diy-v1-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234142B5C480200DA6FB1 /* firmware-meshtastic-diy-v1-2.2.18.e9bde80-update.bin */; };
+		DDB234322B5C480200DA6FB1 /* firmware-tbeam-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234152B5C480200DA6FB1 /* firmware-tbeam-2.2.18.e9bde80-update.bin */; };
+		DDB234332B5C480200DA6FB1 /* firmware-hydra-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234162B5C480200DA6FB1 /* firmware-hydra-2.2.18.e9bde80-update.bin */; };
+		DDB234342B5C480200DA6FB1 /* firmware-tbeam0_7-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234172B5C480200DA6FB1 /* firmware-tbeam0_7-2.2.18.e9bde80-update.bin */; };
+		DDB234352B5C480200DA6FB1 /* firmware-t-deck-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234182B5C480200DA6FB1 /* firmware-t-deck-2.2.18.e9bde80-update.bin */; };
+		DDB234362B5C480200DA6FB1 /* firmware-tlora-v1-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB234192B5C480200DA6FB1 /* firmware-tlora-v1-2.2.18.e9bde80-update.bin */; };
+		DDB234372B5C480200DA6FB1 /* firmware-tlora-v2-1-1_6-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB2341A2B5C480200DA6FB1 /* firmware-tlora-v2-1-1_6-2.2.18.e9bde80-update.bin */; };
+		DDB234382B5C480200DA6FB1 /* firmware-heltec-ht62-esp32c3-sx1262-2.2.18.e9bde80-update.bin in Resources */ = {isa = PBXBuildFile; fileRef = DDB2341B2B5C480200DA6FB1 /* firmware-heltec-ht62-esp32c3-sx1262-2.2.18.e9bde80-update.bin */; };
 		DDC94FBF29C774D50082EA6E /* HardwareModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC94FBE29C774D50082EA6E /* HardwareModels.swift */; };
 		DDF593CF293F1F4700E7B4E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF593CE293F1F4700E7B4E6 /* Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -48,28 +55,35 @@
 		C564793825BE763500126AA8 /* FileHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelpers.swift; sourceTree = "<group>"; };
 		C564793F25BE776C00126AA8 /* BLEConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEConnection.swift; sourceTree = "<group>"; };
 		DD2DC2BD29BC44A5003B383C /* MestasticApiJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MestasticApiJson.swift; sourceTree = "<group>"; };
-		DDB759E22A058CA9006ED576 /* firmware-m5stack-coreink-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-m5stack-coreink-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759E32A058CA9006ED576 /* firmware-tlora-v1-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v1-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759E42A058CA9006ED576 /* firmware-tbeam-s3-core-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam-s3-core-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759E52A058CA9006ED576 /* firmware-rak11200-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-rak11200-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759E62A058CAA006ED576 /* firmware-heltec-v2.1-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v2.1-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759E72A058CAA006ED576 /* firmware-heltec-wsl-v3-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-wsl-v3-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759E82A058CAA006ED576 /* firmware-nano-g1-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-nano-g1-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759E92A058CAA006ED576 /* firmware-heltec-v1-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v1-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759EA2A058CAA006ED576 /* firmware-tlora_v1_3-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora_v1_3-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759EB2A058CAA006ED576 /* firmware-tlora-v2-1-1.8-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v2-1-1.8-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759EC2A058CAA006ED576 /* firmware-tlora-t3s3-v1-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-t3s3-v1-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759ED2A058CAA006ED576 /* firmware-heltec-v2.0-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v2.0-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759EE2A058CAA006ED576 /* firmware-station-g1-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-station-g1-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759EF2A058CAA006ED576 /* firmware-tlora-v2-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v2-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759F02A058CAA006ED576 /* firmware-nano-g1-explorer-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-nano-g1-explorer-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759F12A058CAA006ED576 /* firmware-tbeam0.7-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam0.7-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759F22A058CAA006ED576 /* firmware-meshtastic-dr-dev-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-meshtastic-dr-dev-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759F32A058CAA006ED576 /* firmware-m5stack-core-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-m5stack-core-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759F42A058CAA006ED576 /* firmware-tlora-v2-1-1.6-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v2-1-1.6-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759F52A058CAA006ED576 /* firmware-heltec-v3-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v3-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759F62A058CAA006ED576 /* firmware-meshtastic-diy-v1-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-meshtastic-diy-v1-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
-		DDB759F72A058CAA006ED576 /* firmware-tbeam-2.1.10.7ef12c7-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam-2.1.10.7ef12c7-update.bin"; sourceTree = "<group>"; };
+		DDB233FF2B5C480000DA6FB1 /* firmware-tbeam-s3-core-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam-s3-core-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234002B5C480000DA6FB1 /* firmware-t-watch-s3-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-t-watch-s3-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234012B5C480100DA6FB1 /* firmware-heltec-v3-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v3-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234022B5C480100DA6FB1 /* firmware-station-g1-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-station-g1-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234032B5C480100DA6FB1 /* firmware-rak11200-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-rak11200-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234042B5C480100DA6FB1 /* firmware-heltec-v2_0-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v2_0-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234052B5C480100DA6FB1 /* firmware-picomputer-s3-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-picomputer-s3-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234062B5C480100DA6FB1 /* firmware-m5stack-core-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-m5stack-core-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234072B5C480100DA6FB1 /* firmware-heltec-v1-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v1-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234082B5C480100DA6FB1 /* firmware-heltec-wireless-paper-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-wireless-paper-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234092B5C480100DA6FB1 /* firmware-heltec-wsl-v3-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-wsl-v3-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB2340A2B5C480100DA6FB1 /* firmware-heltec-wireless-tracker-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-wireless-tracker-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB2340B2B5C480100DA6FB1 /* firmware-nano-g1-explorer-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-nano-g1-explorer-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB2340C2B5C480100DA6FB1 /* firmware-heltec-v2_1-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-v2_1-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB2340D2B5C480100DA6FB1 /* firmware-tlora-t3s3-v1-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-t3s3-v1-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB2340E2B5C480100DA6FB1 /* firmware-tlora_v1_3-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora_v1_3-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB2340F2B5C480200DA6FB1 /* firmware-tlora-v2-1-1_8-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v2-1-1_8-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234102B5C480200DA6FB1 /* firmware-m5stack-coreink-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-m5stack-coreink-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234112B5C480200DA6FB1 /* firmware-meshtastic-dr-dev-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-meshtastic-dr-dev-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234122B5C480200DA6FB1 /* firmware-nano-g1-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-nano-g1-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234132B5C480200DA6FB1 /* firmware-tlora-v2-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v2-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234142B5C480200DA6FB1 /* firmware-meshtastic-diy-v1-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-meshtastic-diy-v1-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234152B5C480200DA6FB1 /* firmware-tbeam-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234162B5C480200DA6FB1 /* firmware-hydra-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-hydra-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234172B5C480200DA6FB1 /* firmware-tbeam0_7-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tbeam0_7-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234182B5C480200DA6FB1 /* firmware-t-deck-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-t-deck-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB234192B5C480200DA6FB1 /* firmware-tlora-v1-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v1-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB2341A2B5C480200DA6FB1 /* firmware-tlora-v2-1-1_6-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-tlora-v2-1-1_6-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
+		DDB2341B2B5C480200DA6FB1 /* firmware-heltec-ht62-esp32c3-sx1262-2.2.18.e9bde80-update.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "firmware-heltec-ht62-esp32c3-sx1262-2.2.18.e9bde80-update.bin"; sourceTree = "<group>"; };
 		DDC94FBE29C774D50082EA6E /* HardwareModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardwareModels.swift; sourceTree = "<group>"; };
 		DDF593CE293F1F4700E7B4E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,28 +135,35 @@
 		C564793B25BE775A00126AA8 /* firmware */ = {
 			isa = PBXGroup;
 			children = (
-				DDB759E92A058CAA006ED576 /* firmware-heltec-v1-2.1.10.7ef12c7-update.bin */,
-				DDB759ED2A058CAA006ED576 /* firmware-heltec-v2.0-2.1.10.7ef12c7-update.bin */,
-				DDB759E62A058CAA006ED576 /* firmware-heltec-v2.1-2.1.10.7ef12c7-update.bin */,
-				DDB759F52A058CAA006ED576 /* firmware-heltec-v3-2.1.10.7ef12c7-update.bin */,
-				DDB759E72A058CAA006ED576 /* firmware-heltec-wsl-v3-2.1.10.7ef12c7-update.bin */,
-				DDB759F32A058CAA006ED576 /* firmware-m5stack-core-2.1.10.7ef12c7-update.bin */,
-				DDB759E22A058CA9006ED576 /* firmware-m5stack-coreink-2.1.10.7ef12c7-update.bin */,
-				DDB759F62A058CAA006ED576 /* firmware-meshtastic-diy-v1-2.1.10.7ef12c7-update.bin */,
-				DDB759F22A058CAA006ED576 /* firmware-meshtastic-dr-dev-2.1.10.7ef12c7-update.bin */,
-				DDB759E82A058CAA006ED576 /* firmware-nano-g1-2.1.10.7ef12c7-update.bin */,
-				DDB759F02A058CAA006ED576 /* firmware-nano-g1-explorer-2.1.10.7ef12c7-update.bin */,
-				DDB759E52A058CA9006ED576 /* firmware-rak11200-2.1.10.7ef12c7-update.bin */,
-				DDB759EE2A058CAA006ED576 /* firmware-station-g1-2.1.10.7ef12c7-update.bin */,
-				DDB759F72A058CAA006ED576 /* firmware-tbeam-2.1.10.7ef12c7-update.bin */,
-				DDB759E42A058CA9006ED576 /* firmware-tbeam-s3-core-2.1.10.7ef12c7-update.bin */,
-				DDB759F12A058CAA006ED576 /* firmware-tbeam0.7-2.1.10.7ef12c7-update.bin */,
-				DDB759EA2A058CAA006ED576 /* firmware-tlora_v1_3-2.1.10.7ef12c7-update.bin */,
-				DDB759EC2A058CAA006ED576 /* firmware-tlora-t3s3-v1-2.1.10.7ef12c7-update.bin */,
-				DDB759E32A058CA9006ED576 /* firmware-tlora-v1-2.1.10.7ef12c7-update.bin */,
-				DDB759F42A058CAA006ED576 /* firmware-tlora-v2-1-1.6-2.1.10.7ef12c7-update.bin */,
-				DDB759EB2A058CAA006ED576 /* firmware-tlora-v2-1-1.8-2.1.10.7ef12c7-update.bin */,
-				DDB759EF2A058CAA006ED576 /* firmware-tlora-v2-2.1.10.7ef12c7-update.bin */,
+				DDB2341B2B5C480200DA6FB1 /* firmware-heltec-ht62-esp32c3-sx1262-2.2.18.e9bde80-update.bin */,
+				DDB234072B5C480100DA6FB1 /* firmware-heltec-v1-2.2.18.e9bde80-update.bin */,
+				DDB234042B5C480100DA6FB1 /* firmware-heltec-v2_0-2.2.18.e9bde80-update.bin */,
+				DDB2340C2B5C480100DA6FB1 /* firmware-heltec-v2_1-2.2.18.e9bde80-update.bin */,
+				DDB234012B5C480100DA6FB1 /* firmware-heltec-v3-2.2.18.e9bde80-update.bin */,
+				DDB234082B5C480100DA6FB1 /* firmware-heltec-wireless-paper-2.2.18.e9bde80-update.bin */,
+				DDB2340A2B5C480100DA6FB1 /* firmware-heltec-wireless-tracker-2.2.18.e9bde80-update.bin */,
+				DDB234092B5C480100DA6FB1 /* firmware-heltec-wsl-v3-2.2.18.e9bde80-update.bin */,
+				DDB234162B5C480200DA6FB1 /* firmware-hydra-2.2.18.e9bde80-update.bin */,
+				DDB234062B5C480100DA6FB1 /* firmware-m5stack-core-2.2.18.e9bde80-update.bin */,
+				DDB234102B5C480200DA6FB1 /* firmware-m5stack-coreink-2.2.18.e9bde80-update.bin */,
+				DDB234142B5C480200DA6FB1 /* firmware-meshtastic-diy-v1-2.2.18.e9bde80-update.bin */,
+				DDB234112B5C480200DA6FB1 /* firmware-meshtastic-dr-dev-2.2.18.e9bde80-update.bin */,
+				DDB234122B5C480200DA6FB1 /* firmware-nano-g1-2.2.18.e9bde80-update.bin */,
+				DDB2340B2B5C480100DA6FB1 /* firmware-nano-g1-explorer-2.2.18.e9bde80-update.bin */,
+				DDB234052B5C480100DA6FB1 /* firmware-picomputer-s3-2.2.18.e9bde80-update.bin */,
+				DDB234032B5C480100DA6FB1 /* firmware-rak11200-2.2.18.e9bde80-update.bin */,
+				DDB234022B5C480100DA6FB1 /* firmware-station-g1-2.2.18.e9bde80-update.bin */,
+				DDB234182B5C480200DA6FB1 /* firmware-t-deck-2.2.18.e9bde80-update.bin */,
+				DDB234002B5C480000DA6FB1 /* firmware-t-watch-s3-2.2.18.e9bde80-update.bin */,
+				DDB234152B5C480200DA6FB1 /* firmware-tbeam-2.2.18.e9bde80-update.bin */,
+				DDB233FF2B5C480000DA6FB1 /* firmware-tbeam-s3-core-2.2.18.e9bde80-update.bin */,
+				DDB234172B5C480200DA6FB1 /* firmware-tbeam0_7-2.2.18.e9bde80-update.bin */,
+				DDB2340E2B5C480100DA6FB1 /* firmware-tlora_v1_3-2.2.18.e9bde80-update.bin */,
+				DDB2340D2B5C480100DA6FB1 /* firmware-tlora-t3s3-v1-2.2.18.e9bde80-update.bin */,
+				DDB234192B5C480200DA6FB1 /* firmware-tlora-v1-2.2.18.e9bde80-update.bin */,
+				DDB2341A2B5C480200DA6FB1 /* firmware-tlora-v2-1-1_6-2.2.18.e9bde80-update.bin */,
+				DDB2340F2B5C480200DA6FB1 /* firmware-tlora-v2-1-1_8-2.2.18.e9bde80-update.bin */,
+				DDB234132B5C480200DA6FB1 /* firmware-tlora-v2-2.2.18.e9bde80-update.bin */,
 			);
 			path = firmware;
 			sourceTree = "<group>";
@@ -208,29 +229,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDB234302B5C480200DA6FB1 /* firmware-tlora-v2-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234262B5C480200DA6FB1 /* firmware-heltec-wsl-v3-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234372B5C480200DA6FB1 /* firmware-tlora-v2-1-1_6-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234292B5C480200DA6FB1 /* firmware-heltec-v2_1-2.2.18.e9bde80-update.bin in Resources */,
+				DDB2341C2B5C480200DA6FB1 /* firmware-tbeam-s3-core-2.2.18.e9bde80-update.bin in Resources */,
+				DDB2342F2B5C480200DA6FB1 /* firmware-nano-g1-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234242B5C480200DA6FB1 /* firmware-heltec-v1-2.2.18.e9bde80-update.bin in Resources */,
+				DDB2342B2B5C480200DA6FB1 /* firmware-tlora_v1_3-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234222B5C480200DA6FB1 /* firmware-picomputer-s3-2.2.18.e9bde80-update.bin in Resources */,
+				DDB2342E2B5C480200DA6FB1 /* firmware-meshtastic-dr-dev-2.2.18.e9bde80-update.bin in Resources */,
+				DDB2341E2B5C480200DA6FB1 /* firmware-heltec-v3-2.2.18.e9bde80-update.bin in Resources */,
+				DDB2342A2B5C480200DA6FB1 /* firmware-tlora-t3s3-v1-2.2.18.e9bde80-update.bin in Resources */,
+				DDB2341F2B5C480200DA6FB1 /* firmware-station-g1-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234332B5C480200DA6FB1 /* firmware-hydra-2.2.18.e9bde80-update.bin in Resources */,
+				DDB2342D2B5C480200DA6FB1 /* firmware-m5stack-coreink-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234342B5C480200DA6FB1 /* firmware-tbeam0_7-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234382B5C480200DA6FB1 /* firmware-heltec-ht62-esp32c3-sx1262-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234362B5C480200DA6FB1 /* firmware-tlora-v1-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234312B5C480200DA6FB1 /* firmware-meshtastic-diy-v1-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234352B5C480200DA6FB1 /* firmware-t-deck-2.2.18.e9bde80-update.bin in Resources */,
 				C564792D25BE75DD00126AA8 /* Assets.xcassets in Resources */,
-				DDB75A092A058CAA006ED576 /* firmware-m5stack-core-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB759FD2A058CAA006ED576 /* firmware-heltec-wsl-v3-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A032A058CAA006ED576 /* firmware-heltec-v2.0-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A042A058CAA006ED576 /* firmware-station-g1-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB759FF2A058CAA006ED576 /* firmware-heltec-v1-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A022A058CAA006ED576 /* firmware-tlora-t3s3-v1-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A052A058CAA006ED576 /* firmware-tlora-v2-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB759FB2A058CAA006ED576 /* firmware-rak11200-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A0B2A058CAA006ED576 /* firmware-heltec-v3-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A012A058CAA006ED576 /* firmware-tlora-v2-1-1.8-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB759FC2A058CAA006ED576 /* firmware-heltec-v2.1-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB759FA2A058CAA006ED576 /* firmware-tbeam-s3-core-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A082A058CAA006ED576 /* firmware-meshtastic-dr-dev-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A072A058CAA006ED576 /* firmware-tbeam0.7-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A0D2A058CAA006ED576 /* firmware-tbeam-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A0C2A058CAA006ED576 /* firmware-meshtastic-diy-v1-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A002A058CAA006ED576 /* firmware-tlora_v1_3-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A0A2A058CAA006ED576 /* firmware-tlora-v2-1-1.6-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB759F92A058CAA006ED576 /* firmware-tlora-v1-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB75A062A058CAA006ED576 /* firmware-nano-g1-explorer-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB759FE2A058CAA006ED576 /* firmware-nano-g1-2.1.10.7ef12c7-update.bin in Resources */,
-				DDB759F82A058CAA006ED576 /* firmware-m5stack-coreink-2.1.10.7ef12c7-update.bin in Resources */,
+				DDB234272B5C480200DA6FB1 /* firmware-heltec-wireless-tracker-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234232B5C480200DA6FB1 /* firmware-m5stack-core-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234212B5C480200DA6FB1 /* firmware-heltec-v2_0-2.2.18.e9bde80-update.bin in Resources */,
+				DDB2342C2B5C480200DA6FB1 /* firmware-tlora-v2-1-1_8-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234282B5C480200DA6FB1 /* firmware-nano-g1-explorer-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234252B5C480200DA6FB1 /* firmware-heltec-wireless-paper-2.2.18.e9bde80-update.bin in Resources */,
+				DDB2341D2B5C480200DA6FB1 /* firmware-t-watch-s3-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234202B5C480200DA6FB1 /* firmware-rak11200-2.2.18.e9bde80-update.bin in Resources */,
+				DDB234322B5C480200DA6FB1 /* firmware-tbeam-2.2.18.e9bde80-update.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

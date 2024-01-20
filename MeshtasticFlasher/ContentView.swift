@@ -27,7 +27,7 @@ struct ContentView: View {
             
             let name = val.relativeString
                 .replacingOccurrences(of: "firmware-", with: "")
-                .replacingOccurrences(of: "2.1.10.7ef12c7-update.bin", with: "")
+                .replacingOccurrences(of: "2.2.18.e9bde80-update.bin", with: "")
                 .replacingOccurrences(of: "-", with: " ")
             
             let value = val.relativeString
