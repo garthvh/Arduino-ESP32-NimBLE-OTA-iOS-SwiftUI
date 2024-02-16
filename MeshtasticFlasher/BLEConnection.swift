@@ -52,7 +52,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     @Published var name = ""
     @Published var connected = false
     @Published var transferProgress : Double = 0.0
-    @Published var chunkCount = 2 // number of chunks to be sent before peripheral needs to accknowledge.
+    @Published var chunkCount = 1 // number of chunks to be sent before peripheral needs to accknowledge.
     @Published var elapsedTime = 0.0
     @Published var kBPerSecond = 0.0
     
@@ -244,7 +244,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
                 //print("\(Date()) -X-")
                 if transferOngoing {
                     packageCounter = 0
-                    writeDataToPeriheral(characteristic: otaCharacteristic!)
+                    writeDataToPeripheral(characteristic: otaCharacteristic!)
                 }
             }
         }
@@ -366,7 +366,7 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
     // Peripheral callback when its ready to receive more data without response
     func peripheralIsReady(toSendWriteWithoutResponse peripheral: CBPeripheral) {
         if transferOngoing && packageCounter < chunkCount {
-                writeDataToPeriheral(characteristic: otaCharacteristic!)
+                writeDataToPeripheral(characteristic: otaCharacteristic!)
         }
     }
     
@@ -380,38 +380,56 @@ class BLEConnection:NSObject, ObservableObject, CBCentralManagerDelegate, CBPeri
         }
         dataBuffer = data
         dataLength = dataBuffer.count
+        
+        // 1. Get the peripheral and its transfer characteristic
+        guard let discoveredPeripheral = state.peripheral else { return }
+        // Send dataLength to the device
+        let sizeMessage = "OTA_SIZE:\(dataLength)"
+        if let sizeData = sizeMessage.data(using: .utf8) {
+            // Send sizeData to the peripheral
+            // Assuming writeCharacteristic is the characteristic for sending messages
+            discoveredPeripheral.writeValue(sizeData, for: otaCharacteristic!, type: .withoutResponse)
+        } else {
+            print("Failed to encode OTA size message")
+            return
+        }
+        
+        // Print the total size of the data in hexadecimal format
+        print("Total data size (hexadecimal): \(String(format: "%02X", dataBuffer.count))")
         transferOngoing = true
+        
         packageCounter = 0
         // Send the first chunk
         elapsedTime = 0.0
         sentBytes = 0
         firstAcknowledgeFromESP32 = false
         startTime = CFAbsoluteTimeGetCurrent()
-        writeDataToPeriheral(characteristic: otaCharacteristic!)
+        writeDataToPeripheral(characteristic: otaCharacteristic!)
     }
     
-    
-    func writeDataToPeriheral(characteristic: CBCharacteristic) {
-        
-        // 1. Get the peripheral and it's transfer characteristic
-        guard let discoveredPeripheral = state.peripheral else {return}
+    func writeDataToPeripheral(characteristic: CBCharacteristic) {
+        // 1. Get the peripheral and its transfer characteristic
+        guard let discoveredPeripheral = state.peripheral else { return }
         // ATT MTU - 3 bytes
-        chunkSize = discoveredPeripheral.maximumWriteValueLength (for: .withoutResponse) - 3
+        let maxWriteValueLength = discoveredPeripheral.maximumWriteValueLength(for: .withoutResponse)
+        chunkSize = maxWriteValueLength - 3
+        print("Chunk size: \(chunkSize), 0x\(String(format: "%02X", chunkSize))")
         // Get the data range
-        var range:Range<Data.Index>
+        var range: Range<Data.Index>
+             
         // 2. Loop through and send each chunk to the BLE device
-        // check to see if number of iterations completed and peripheral can accept more data
-        // package counter allow only "chunkCount" of data to be sent per time.
-        while transferOngoing && discoveredPeripheral.canSendWriteWithoutResponse && packageCounter < chunkCount {
-
+        // check to see if the number of iterations completed and the peripheral can accept more data
+        // package counter allows only "chunkCount" of data to be sent per time.
+        while transferOngoing && packageCounter < chunkCount {
             // 3. Create a range based on the length of data to return
             range = (0..<min(chunkSize, dataBuffer.count))
-            
             // 4. Get a subcopy copy of data
             let subData = dataBuffer.subdata(in: range)
-            
+            // Print the first byte of the subData package as hexadecimal
+            if let firstByte = subData.first {
+                print("First byte of subData package: \(String(format: "%02X", firstByte))")
+            }
             // 5. Send data chunk to BLE peripheral, send EOF when buffer is empty.
-            
             if !dataBuffer.isEmpty {
                 discoveredPeripheral.writeValue(subData, for: characteristic, type: .withoutResponse)
                 packageCounter += 1
